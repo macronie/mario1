@@ -12,19 +12,22 @@ function determineHeightAndThenDrawPyramid() {
 
     // TODO 3
     // figure out the height the user typed (replace the "5" below)
-    heightStr = "5";
-
+    //heightStr = "5";
+    //<input type="text" id="height"/>
+    heightStr = document.getElementById("height").value;
     // here we convert the string to an int
     height = parseInt(heightStr);
-
-    // TODO 2
+    // TODO 2 - Done
     // draw the pyramid with the given height
-
+    drawPyramid(height);
 }
 
 
-// TODO 1
+// TODO 1 - Done - works fine
 // hook up the button's click event to our determineHeightAndThenDrawPyramid function
+//document.getElementById("draw").onclick = function() {determineHeightAndThenDrawPyramid()};
+//   var button = document.querySelector("button");
+//   button.addEventListener("click", determineHeightAndThenDrawPyramid());
 
 
 
@@ -34,10 +37,13 @@ function determineHeightAndThenDrawPyramid() {
  * Renders, in the HTML document, a Mario pyramid of the specified height
  */
  function drawPyramid(height) {
+     //
 
      // TODO 4
      // before drawing, clear the old content
-
+     //<div id="pyramid"></div>
+      var elem = document.getElementById("pyramid");
+      elem.innerHTML = "";
 
      // for each row....
      for (var row = 0; row < height; row++) {
@@ -64,5 +70,11 @@ function determineHeightAndThenDrawPyramid() {
 
         // insert the paragraph as a child of the container <div>
         document.getElementById("pyramid").appendChild(rowElem);
+        // var para = document.createElement("p");
+        // var node = document.createTextNode(rowStr);
+        // para.appendChild(node);
+
+        // var element = document.getElementById("pyramid");
+        // element.appendChild(para);
     }
 }
